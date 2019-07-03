@@ -8,5 +8,5 @@ setup(
     author_email='jack.grahl@gmail.com',
     description='Retrieve and format data from the Live Departure Board',
     packages=find_packages(),    
-    install_requires=['zeep'],
+    install_requires=['suds-py3==1.3.3.0'],
 )

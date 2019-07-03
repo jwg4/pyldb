@@ -1,12 +1,15 @@
-from zeep import Client
+from suds import Client
 
-from credentials import token
+from .details import wsdl_url, service_url 
 
 
 def get_board(crs, token):
-    client = Client("https://lite.realtime.nationalrail.co.uk/OpenLDBWS/wsdl.aspx?ver=2017-10-01")
-    result = client.service.GetDepartureBoard(
-        20, crs,
-        _soapheaders=token
-    )
-    print(result)
+    client = Client(wsdl_url, location=service_url)
+
+    access_token = client.factory.create("ns2:AccessToken")
+    access_token.TokenValue = token
+    client.set_options(soapheaders=access_token)
+
+    service = client.service
+    result = service.GetDepartureBoard(20, crs)
+    return result
