@@ -1,0 +1,25 @@
+language: python
+python:
+- '2.6'
+- '2.7'
+- '3.3'
+- '3.4'
+- '3.5'
+- pypy
+matrix:
+  allow_failures:
+    - python: '2.6'
+install:
+- pip install flake8==2.5.0
+script:
+- flake8 . --max-complexity 5 --max-line-length 99 --ignore E201,E202,E402
+- python setup.py test
+notifications:
+  email: false
+deploy:
+  provider: pypi
+  user: jwg
+  on:
+    python: '3.5'
+  password:
+    secure: SEhp5okwi9PyQ7kTCTYTsBG0d6/SaQxSx+P9rMDCyxcZgmF+wboq+S1h2CY9XWRsj/o9/S7nLLpzqSql1oWzpD6SI3emzl/E+1fn/WObYR7bAdgb+HTiWyLcsn9Vs+ITDlm/qYasU7PQvmyCnZ1yEu/Nkl+w1p14S9OblPs8Zn0UI280EZt2NVxvpCUMl2BYs4/7moyfdPb/2kS9pYrx+JytTyX7MetK2RvEGYSJFdbcMpd3Ec6AYufLSh/jlb0Sa7EQt0Adhq8E0WfIcHCqC+RXtWrYu2yKcJf05awXl8F3aMgGs4jXB61nO3aG6bXc6IwRf7263hI4Yq8zoEnTGnfJ99A2faYmpYJfFZ1CllDCV4vogCobLGRJ9HFLzws4QxPwDfUtN6+m+i4gTENLg9dsebAs8LSXdz9hdadCSxp6hjlQQRmDM4fRFMl0bmc/itXcOdrf43AxyJ1x3O/dSNbIjEhEg3JdFbeXbB+U5Q0whiPf8Z9PKENwqn+f76tJk9NiIIlbNQf2PedZDK2oOVYM7ME92uCeOHLIgrbuclXM0jlfHEhStgehCF/WYIWWTW25FpixaquC0QCIBE8nVaeLepf6BYFNc6+0oGmpZ/CLxN28g/SdfcwRNZI+cFsT2KoWvdSYyby6ms9z4A1oMQupaoE175GA9KEYe/q4QLU=
