@@ -1,6 +1,6 @@
 from suds import Client
 
-from .details import wsdl_url, service_url 
+from .details import wsdl_url, service_url
 
 
 def get_board(crs, token):
