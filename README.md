@@ -12,4 +12,4 @@ To run this code you will need your own access token which you have to get from 
 If you're not in the UK or not interested in train data from the UK, this code probably won't help you.
 
 ## Important
-National Rail Enquiries is the data provider for the API which this code wraps. However, this library is not approved, endorsed or supported by National Rail Enquiries. 
+National Rail Enquiries is the data provider for the API which this code wraps. However, this library is not approved, endorsed or supported by National Rail Enquiries. Information about Darwin Data Feeds provided by NRE (of which LDBWS is one) is at [[https://www.nationalrail.co.uk/100296.aspx]].
