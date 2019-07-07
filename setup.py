@@ -16,4 +16,5 @@ setup(
     ),
     packages=find_packages(),
     install_requires=['suds-py3==1.3.3.0', 'jinja2==2.10.1'],
+    test_requires=['requests']
 )
