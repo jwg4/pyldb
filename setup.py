@@ -12,7 +12,8 @@ setup(
         "departure board data from the National Rail enquiries Darwin  / LDBWS " +
         "service. This code uses the suds SOAP library and the Jinja2 templating " +
         "library to allow you to input a three-letter station code and get back " +
-        "HTML departure board with configurable style and layout.",
+        "HTML departure board with configurable style and layout."
+    ),
     packages=find_packages(),
     install_requires=['suds-py3==1.3.3.0', 'jinja2==2.10.1'],
 )
