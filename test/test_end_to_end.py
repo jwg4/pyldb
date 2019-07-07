@@ -26,4 +26,4 @@ class TestRender(TestCase):
         result = r.json()
         messages = result['messages']
         errors = [ m for m in messages if m['type'] == 'error' ]
-        self.assertItemsEqual([], errors)
+        self.assertListEqual([], errors)
