@@ -6,20 +6,23 @@
 
 <body>
 <h1>{{board.crs}} - Live departure board for {{board.locationName}}</h1>
+<h2>Retrieved at {{board.generatedAt|string|batch(19)|first|join}}</h2>
 <table>
 <thead>
     <tr>
         <td>Expected</td>
         <td>Destination</td>
+        <td>Platform</td>
         <td>Operator</td>
         <td>Scheduled</td>
     </tr>
     </thead>
     <tbody>
     {% for train in board.trainServices.service[:20] %}
-    <tr>
+    <tr class="{% if train.etd == 'Cancelled' %}train-cancelled{% elif train.etd == 'On time' %}train-ontime{% else %}train-late{% endif %}">
         <td>{% if train.etd == 'On time' %}{{ train.std }}{% else %}{{ train.etd }}{% endif %}</td>
         <td>{{ train.destination.location[0].locationName }}</td>
+        <td>{{ train.platform }}</td>
         <td>{{ train.operator }}</td>
         <td>({{ train.std }})</td>
     </tr>
