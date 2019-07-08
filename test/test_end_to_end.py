@@ -25,7 +25,8 @@ class TestRender(TestCase):
     def validate(self, html):
         self.assertIsNotNone(html)
 
-        r = requests.post('https://validator.w3.org/nu/',
+        r = requests.post(
+            'https://validator.w3.org/nu/',
             data=html,
             params={'out': 'json'},
             headers={'Content-Type': 'text/html; charset=UTF-8'}
