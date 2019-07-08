@@ -1,0 +1,39 @@
+thead td {
+    border-bottom-style: solid;
+}
+
+td {
+    font-size: 25px;
+}
+
+.train-cancelled {
+    color: gray;
+}
+
+.train-ontime {
+    color: black;
+}
+
+.train-late {
+    color: darkred;
+}
+
+td.expected,
+td.scheduled,
+td.platform {
+    text-align: center;
+}
+
+td.expected,
+td.destination,
+td.platform {
+    font-weight: bold;
+}
+
+tr:nth-child(even) {
+    background-color: palegreen;
+}
+
+tr:nth-child(odd) {
+    background-color: white;
+}
