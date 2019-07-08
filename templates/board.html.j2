@@ -6,5 +6,24 @@
 
 <body>
 <h1>{{board.crs}} - Live departure board for {{board.locationName}}</h1>
-
+<table>
+<thead>
+    <tr>
+        <td>Expected</td>
+        <td>Destination</td>
+        <td>Operator</td>
+        <td>Scheduled</td>
+    </tr>
+    </thead>
+    <tbody>
+    {% for train in board.trainServices.service[:20] %}
+    <tr>
+        <td>{% if train.etd == 'On time' %}{{ train.std }}{% else %}{{ train.etd }}{% endif %}</td>
+        <td>{{ train.destination.location[0].locationName }}</td>
+        <td>{{ train.operator }}</td>
+        <td>({{ train.std }})</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
 </body>
