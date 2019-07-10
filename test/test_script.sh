@@ -11,4 +11,5 @@ virtualenv venv
 . venv/bin/activate
 
 pip install pyLDB-*.tar.gz
+pip install requests
 python -m unittest discover test
