@@ -1,4 +1,4 @@
-from jinja2 import Environment, FileSystemLoader, select_autoescape
+from jinja2 import Environment, TemplateLoader, select_autoescape
 
 env = Environment(
     loader=PackageLoader('pyldb', 'templates'),
