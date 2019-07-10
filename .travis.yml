@@ -15,6 +15,7 @@ install:
 script:
 - flake8 . --max-complexity 5 --max-line-length 99 --ignore E201,E202,E402
 - python setup.py test
+- test/test_script.sh
 env:
 - secure: VcMgjDkCmUbHGEUr0TMkX4A6dfghr+u54ygSfsSr+o1tJcQhaPcoFM2Uw3f/wXdrMoISFDax7yqmwIaFN/1nVK1sb2GeQ715kPpVUQMiXzQdbtRIWHF3qpnANmKlj1qBHbHznT/NT+3q5MwYuAomgmcre7iykW63ilC+IGpit4G82tFFYqBYiBJDW3IU+ji+7SQqK8UHOsU6q4gat20d1cgbHNccixJDDF+7umfy1VlBYdGbLYB3Q//XUds5nXK+cRSW5U6dReO2QXbC1mc2e6NcKN+zTGKaIGaARzXg+jdBsg/VRzGmtdH80knIB4CcSXlztQKXb1N7wYHemEbNdHGUiQSs4AwRIPckzPxkB31kHraSi8BTsZ+ae4UvH3Fnu9AMeBF6DH3KSGG3fa3lx5FRP4M5JMFIHOTB2u0JLv3h0H1y/UntzJuKgtzOwvxWdlJt0Kb/4hqYse8g4S6wW91PJHBKh+HmaMCK5uqR6hHH4wuWd40a98PbuTyBRoqAki06CcdmfN09a5NvCorXdgu55ojwQX45HvyAd+NNZbhV7omZKv+qxYvzwEbw4TnoyU/IUjgli9VPPAlNpgG3XpCSWRYThlY6vVLDnePnfrqzFL6q2JQbR4t/N0ZfYLlLub9f4v8/tffIj2DWOZH6aZ3O4TdWlEd8BMCoQiJMJX8=
 notifications:
