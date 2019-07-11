@@ -1,13 +1,13 @@
 #!/bin/bash
 
-python setup.py sdist
+python3 setup.py sdist
 
 mkdir temp
 cp -R test/ temp
 cp dist/pyLDB-*.tar.gz temp
 
 cd temp/
-virtualenv venv
+virtualenv venv -p python3
 . venv/bin/activate
 
 pip install pyLDB-*.tar.gz
