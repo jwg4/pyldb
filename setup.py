@@ -18,5 +18,5 @@ setup(
     install_requires=['suds-py3==1.3.3.0', 'jinja2==2.10.1'],
     tests_require=['requests'],
     include_package_data=True,
-    package_data={'': ['pyldb/templates/*.j2', 'pyldb/extra/css/*.css']}
+    package_data={'': ['templates/*.j2', 'pyldb/extra/css/*.css']}
 )
