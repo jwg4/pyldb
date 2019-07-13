@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>{{board.crs}} - Live departure board for {{board.locationName}}</title>
+<link rel="stylesheet" type="text/css" href="board.css">
+</head>
+
+<body>
+<h1>{{board.crs}} - Live departure board for {{board.locationName}}</h1>
+<h2>Retrieved at {{board.generatedAt|string|batch(19)|first|join}}</h2>
+<table>
+<thead>
+    <tr>
+        <td>Expected</td>
+        <td>Destination</td>
+        <td>Scheduled</td>
+        <td>Platform</td>
+        <td>Operator</td>
+    </tr>
+    </thead>
+    <tbody>
+    {% for train in board.trainServices.service[:20] %}
+    <tr class="{% if train.etd == 'Cancelled' %}train-cancelled{% elif train.etd == 'On time' %}train-ontime{% else %}train-late{% endif %}">
+        <td class="expected">{% if train.etd == 'On time' %}{{ train.std }}{% else %}{{ train.etd }}{% endif %}</td>
+        <td class="destination">{{ train.destination.location[0].locationName }}</td>
+        <td class="scheduled">({{ train.std }})</td>
+        <td class="platform">{{ train.platform }}</td>
+        <td class="operator">{{ train.operator }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+</body>
