@@ -1,0 +1,2 @@
+include pyldb/templates/*.j2
+include pyldb/extra/css/*.css
