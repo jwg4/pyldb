@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='pyLDB',
-    version='0.3.0',
+    version='0.4.0',
     url='https://github.com/jwg4/pyldb',
     author='Jack Grahl',
     author_email='jack.grahl@gmail.com',
@@ -18,5 +18,6 @@ setup(
     install_requires=['suds-py3==1.3.3.0', 'jinja2==2.10.1'],
     tests_require=['requests'],
     include_package_data=True,
-    package_data={'': ['templates/*.j2', 'pyldb/extra/css/*.css']}
+    package_data={'': ['templates/*.j2', 'pyldb/extra/css/*.css']},
+    license='MIT'
 )
