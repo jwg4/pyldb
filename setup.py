@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='pyLDB',
-    version='0.3.0',
+    version='0.4.0',
     url='https://github.com/jwg4/pyldb',
     author='Jack Grahl',
     author_email='jack.grahl@gmail.com',
