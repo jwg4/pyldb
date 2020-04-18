@@ -19,15 +19,17 @@
     </tr>
     </thead>
     <tbody>
-    {% for train in board.trainServices.service[:20] %}
-    <tr class="{% if train.etd == 'Cancelled' %}train-cancelled{% elif train.etd == 'On time' %}train-ontime{% else %}train-late{% endif %}">
-        <td class="expected">{% if train.etd == 'On time' %}{{ train.std }}{% else %}{{ train.etd }}{% endif %}</td>
-        <td class="destination">{{ train.destination.location[0].locationName }}</td>
-        <td class="scheduled">({{ train.std }})</td>
-        <td class="platform">{{ train.platform }}</td>
-        <td class="operator">{{ train.operator }}</td>
-    </tr>
-    {% endfor %}
+    {% if board.trainServices is defined %}
+        {% for train in board.trainServices.service[:20] %}
+        <tr class="{% if train.etd == 'Cancelled' %}train-cancelled{% elif train.etd == 'On time' %}train-ontime{% else %}train-late{% endif %}">
+            <td class="expected">{% if train.etd == 'On time' %}{{ train.std }}{% else %}{{ train.etd }}{% endif %}</td>
+            <td class="destination">{{ train.destination.location[0].locationName }}</td>
+            <td class="scheduled">({{ train.std }})</td>
+            <td class="platform">{{ train.platform }}</td>
+            <td class="operator">{{ train.operator }}</td>
+        </tr>
+        {% endfor %}
+    {% endif %}
     </tbody>
 </table>
 </body>
