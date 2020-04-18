@@ -37,3 +37,7 @@ tr:nth-child(even) {
 tr:nth-child(odd) {
     background-color: white;
 }
+
+h3.nrccMessage {
+    color: red;
+}
