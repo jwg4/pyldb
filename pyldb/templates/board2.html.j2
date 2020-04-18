@@ -32,4 +32,9 @@
     {% endif %}
     </tbody>
 </table>
+{% if board.nrccMessages is defined %}
+    {% for msg in board.nrccMessages.message %}
+        <h3 class="nrccMessage">{{ msg }}</h3>
+    {% endfor %}
+{% endif %}
 </body>
