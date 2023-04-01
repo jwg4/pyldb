@@ -31,13 +31,24 @@ td.platform {
 }
 
 tr:nth-child(even) {
-    background-color: palegreen;
+    background-color: lightskyblue;
 }
 
 tr:nth-child(odd) {
     background-color: white;
 }
 
+td.operator_image {
+    background-color: white;
+}
+
 h3.nrccMessage {
     color: red;
+}
+
+.operator_image img {
+    height: 2em;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }

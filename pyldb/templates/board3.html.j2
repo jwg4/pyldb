@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>{{board.crs}} - Live departure board for {{board.locationName}}</title>
+<link rel="stylesheet" type="text/css" href="board.css">
+</head>
+
+<body>
+<h1>{{board.crs}} - Live departure board for {{board.locationName}}</h1>
+<h2>Retrieved at {{board.generatedAt|string|batch(19)|first|join}}</h2>
+<table>
+<thead>
+    <tr>
+        <td>Expected</td>
+        <td>Destination</td>
+        <td>Scheduled</td>
+        <td>Platform</td>
+        <td>Operator</td>
+        <td></td>
+    </tr>
+    </thead>
+    <tbody>
+    {% if board.trainServices is defined %}
+        {% for train in board.trainServices.service[:20] %}
+        <tr class="{% if train.etd == 'Cancelled' %}train-cancelled{% elif train.etd == 'On time' %}train-ontime{% else %}train-late{% endif %}">
+            <td class="expected">{% if train.etd == 'On time' %}{{ train.std }}{% else %}{{ train.etd }}{% endif %}</td>
+            <td class="destination">{{ train.destination.location[0].locationName }}</td>
+            <td class="scheduled">({{ train.std }})</td>
+            <td class="platform">{{ train.platform }}</td>
+            <td class="operator">{{ train.operator }}</td>
+            <td class="operator_image"><img src="{{ train.operator | replace(" ", "_") | lower }}.png"></td>
+        </tr>
+        {% endfor %}
+    {% endif %}
+    </tbody>
+</table>
+{% if board.nrccMessages is defined %}
+    {% for msg in board.nrccMessages.message %}
+        <h3 class="nrccMessage">{{ msg }}</h3>
+    {% endfor %}
+{% endif %}
+</body>
