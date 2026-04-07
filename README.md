@@ -28,7 +28,7 @@ National Rail Enquiries is a UK organization which provides information about tr
 This code is libre software and might help you get your own project working. There are several other projects which get train departure boards using Python:
  - [helenst/train-times-display](https://github.com/helenst/train-times-display) Scrapes the NRE website and writes to a LCD display.
  - [grundleborg/nrewebservices](https://github.com/grundleborg/nrewebservices) A library which works with Python 2 and 3. Uses `suds-jurko`.
- - [robert-b-clarke/nre-darwin-py](https://github.com/robert-b-clarke/nre-darwin-py) An 'abstraction layer` for LDBWS. Also uses `suds-jurko`, also Python 2 and 3.
+ - [robert-b-clarke/nre-darwin-py](https://github.com/robert-b-clarke/nre-darwin-py) An 'abstraction layer' for LDBWS. Also uses `suds-jurko`, also Python 2 and 3.
  - [Diaolou/PiTrains](https://github.com/Diaolou/PiTrains) Uses `nre-darwin-py` (above) to display train departures on a Raspberry Pi using LEDs.
 
 ## Important
