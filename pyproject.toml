@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pyldb"
-version = "0.6.0"
+version = "0.7.0"
 description = "Python interface to the Live Departure Boards"
 authors = ["Jack Grahl <jack.grahl@gmail.com>"]
 license = "MIT"
