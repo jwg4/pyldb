@@ -1,14 +1,13 @@
 language: python
 python:
-- '3.3'
-- '3.4'
-- '3.5'
-- '3.6'
-- '3.7'
+- '3.9'
+- '3.10'
+- '3.11'
+- '3.12'
+- '3.13'
 matrix:
   allow_failures:
-    - python: '3.3'
-    - python: '3.7'
+    - python: '3.9'
 install:
 - pip install flake8==2.5.0
 - pip install -U setuptools
@@ -24,7 +23,7 @@ deploy:
   provider: pypi
   user: jwg
   on:
-    python: '3.5'
+    python: '3.11'
     branch: 'master'
   skip_existing: true
   password:
